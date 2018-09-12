@@ -3,6 +3,13 @@
 # unset the SUBDIR variable since it changes the behavior of make here
 unset SUBDIR
 
+TF_TYPE="cpu" # Change to "gpu" for GPU support
+OS="darwin" # Change to "darwin" for macOS
+TARGET_DIRECTORY="./"
+curl -L \
+ "https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-${TF_TYPE}-${OS}-x86_64-1.10.1.tar.gz" |
+ tar -C ${PREFIX} -xz
+
 ./configure \
         --prefix="${PREFIX}" \
         --disable-doc \

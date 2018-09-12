@@ -5,17 +5,17 @@ package:
   version: {{ version }}
 
 source:
-  - fn: libtensorflow-cpu-darwin-x86_64-1.10.1.tar.gz # [osx]
-    url: https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-darwin-x86_64-1.10.1.tar.gz # [osx]
-    fn: libtensorflow-cpu-linux-x86_64-1.10.1.tar.gz # [linux]
-    url: https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-1.10.1.tar.gz # [linux]
-    fn: libtensorflow-cpu-windows-x86_64-1.10.0-rc0.zip # [win]
-    url: https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-windows-x86_64-1.10.0-rc0.zip # [win]
+  # - fn: libtensorflow-cpu-darwin-x86_64-1.10.1.tar.gz # [osx]
+  #   url: https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-darwin-x86_64-1.10.1.tar.gz # [osx]
+  #   fn: libtensorflow-cpu-linux-x86_64-1.10.1.tar.gz # [linux]
+  #   url: https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-1.10.1.tar.gz # [linux]
+  #   fn: libtensorflow-cpu-windows-x86_64-1.10.0-rc0.zip # [win]
+  #   url: https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-windows-x86_64-1.10.0-rc0.zip # [win]
 
-  - git_url: https://github.com/oeway/FFmpeg.git
-    git_tag: b69ea74
+  # - git_url: https://github.com/oeway/FFmpeg.git
+  #   git_tag: b69ea74
 
-  # path: /Users/xxxx/FFmpeg
+  - path: /Users/wei/workspace/FFmpeg
 
   # fn: ffmpeg-{{ version }}.tar.gz  # [not win]
   # url: https://ffmpeg.org/releases/ffmpeg-{{ version }}.tar.gz  # [not win]
