@@ -22,7 +22,8 @@ unset SUBDIR
         --enable-libfreetype \
         --enable-gnutls \
         --enable-libx264 \
-        --enable-libopenh264
+        --enable-libopenh264 \
+        --enable-libtensorflow
 
 make -j${CPU_COUNT}
 make install -j${CPU_COUNT}

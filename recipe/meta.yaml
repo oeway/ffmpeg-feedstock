@@ -5,18 +5,30 @@ package:
   version: {{ version }}
 
 source:
-  fn: ffmpeg-{{ version }}.tar.gz  # [not win]
-  url: https://ffmpeg.org/releases/ffmpeg-{{ version }}.tar.gz  # [not win]
-  sha256: a56ef203c14ffab56b97690a1005522cfa0dc2c42c3c40c33c0bec4875b706eb  # [not win]
+  - fn: libtensorflow-cpu-darwin-x86_64-1.10.1.tar.gz # [osx]
+    url: https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-darwin-x86_64-1.10.1.tar.gz # [osx]
+    fn: libtensorflow-cpu-linux-x86_64-1.10.1.tar.gz # [linux]
+    url: https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-1.10.1.tar.gz # [linux]
+    fn: libtensorflow-cpu-windows-x86_64-1.10.0-rc0.zip # [win]
+    url: https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-windows-x86_64-1.10.0-rc0.zip # [win]
+
+  - git_url: https://github.com/oeway/FFmpeg.git
+    git_tag: b69ea74
+
+  # path: /Users/xxxx/FFmpeg
+
+  # fn: ffmpeg-{{ version }}.tar.gz  # [not win]
+  # url: https://ffmpeg.org/releases/ffmpeg-{{ version }}.tar.gz  # [not win]
+  # sha256: a56ef203c14ffab56b97690a1005522cfa0dc2c42c3c40c33c0bec4875b706eb  # [not win]
   # This patch is required to fix https://trac.macports.org/ticket/55746
   # with Xcode < 7.0, where _Nullable attribues are not supported.
   # Can probably be removed once the compiler infrastructure is updated.
-  patches:  # [osx]
-    - patch-libavcodec-videotoolboxenc.c-drop-Nullable.patch  # [osx]
+  # patches:  # [osx]
+  #   - patch-libavcodec-videotoolboxenc.c-drop-Nullable.patch  # [osx]
 
-  fn: ffmpeg-{{ version }}-win64-shared.zip  # [win]
-  url: https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-{{ version }}-win64-shared.zip  # [win]
-  sha256: ede566aca8b5348dff85570f9638c6bad33209f9419f79db7bde7daa37599bff  # [win]
+  # fn: ffmpeg-{{ version }}-win64-shared.zip  # [win]
+  # url: https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-{{ version }}-win64-shared.zip  # [win]
+  # sha256: ede566aca8b5348dff85570f9638c6bad33209f9419f79db7bde7daa37599bff  # [win]
 
 build:
   number: 0
